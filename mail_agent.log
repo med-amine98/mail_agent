@@ -1,0 +1,91 @@
+2026-11-04 09:40:52,266 | ERROR | Task failed
+Traceback (most recent call last):
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 296, in worker
+    self.q.put((done, fn(), None))
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 72, in fetch_inbox
+    raise RuntimeError("GMAIL_ADDRESS / GMAIL_APP_PASSWORD manquants dans .env")
+RuntimeError: GMAIL_ADDRESS / GMAIL_APP_PASSWORD manquants dans .env
+2026-11-04 09:59:40,721 | ERROR | Task failed
+Traceback (most recent call last):
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 550, in worker
+    self.q.put((done, fn(), None))
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 113, in fetch_inbox
+    raise RuntimeError("GMAIL_ADDRESS / GMAIL_APP_PASSWORD manquants dans .env")
+RuntimeError: GMAIL_ADDRESS / GMAIL_APP_PASSWORD manquants dans .env
+2026-11-04 09:59:47,571 | ERROR | Task failed
+Traceback (most recent call last):
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 550, in worker
+    self.q.put((done, fn(), None))
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 241, in connect_gmail
+    context = _launch(p)
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 210, in _launch
+    return p.chromium.launch_persistent_context(**kwargs)                    # sinon Chromium
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 14861, in launch_persistent_context
+    self._sync(
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_browser_type.py", line 164, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch_persistent_context: Target page, context or browser has been closed
+Browser logs:
+
+<launching> C:\Users\salah\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled --disable-notifications --user-data-dir=C:\Users\salah\Desktop\mail_agent\browser_profile --remote-debugging-pipe about:blank
+<launched> pid=21484
+[pid=21484][out] Ouverture dans une session de navigateur existante.
+Call log:
+  - <launching> C:\Users\salah\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled --disable-notifications --user-data-dir=C:\Users\salah\Desktop\mail_agent\browser_profile --remote-debugging-pipe about:blank
+  - <launched> pid=21484
+  - [pid=21484][out] Ouverture dans une session de navigateur existante.
+  - [pid=21484] <gracefully close start>
+  - [pid=21484] <kill>
+  - [pid=21484] <will force kill>
+  - [pid=21484] taskkill stderr: Erreur\ufffd: le processus "21484" est introuvable.
+  - [pid=21484] <process did exit: exitCode=0, signal=null>
+  - [pid=21484] starting temporary directories cleanup
+  - [pid=21484] finished temporary directories cleanup
+  - [pid=21484] <gracefully close end>
+
+2026-11-04 10:00:14,889 | ERROR | Task failed
+Traceback (most recent call last):
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 550, in worker
+    self.q.put((done, fn(), None))
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 254, in calibrate_clicks
+    context = _launch(p)
+  File "C:\Users\salah\Desktop\mail_agent\mail_agent.py", line 210, in _launch
+    return p.chromium.launch_persistent_context(**kwargs)                    # sinon Chromium
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 14861, in launch_persistent_context
+    self._sync(
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_browser_type.py", line 164, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+  File "C:\Users\salah\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserType.launch_persistent_context: Target page, context or browser has been closed
+Browser logs:
+
+<launching> C:\Users\salah\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled --disable-notifications --user-data-dir=C:\Users\salah\Desktop\mail_agent\browser_profile --remote-debugging-pipe about:blank
+<launched> pid=29420
+[pid=29420][out] Ouverture dans une session de navigateur existante.
+Call log:
+  - <launching> C:\Users\salah\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --disable-blink-features=AutomationControlled --disable-notifications --user-data-dir=C:\Users\salah\Desktop\mail_agent\browser_profile --remote-debugging-pipe about:blank
+  - <launched> pid=29420
+  - [pid=29420][out] Ouverture dans une session de navigateur existante.
+  - [pid=29420] <gracefully close start>
+  - [pid=29420] <kill>
+  - [pid=29420] <will force kill>
+  - [pid=29420] taskkill stderr: Erreur\ufffd: le processus "29420" est introuvable.
+  - [pid=29420] <process did exit: exitCode=0, signal=null>
+  - [pid=29420] starting temporary directories cleanup
+  - [pid=29420] finished temporary directories cleanup
+  - [pid=29420] <gracefully close end>
+
+2026-11-04 10:09:40,390 | INFO | Mail sent via browser to aminehechmi@gmail.com
+2026-11-04 10:19:01,977 | INFO | Mail sent via browser to exemple1@gmail.com
+2026-11-04 10:19:43,940 | INFO | Mail sent via browser to exemple2@gmail.com
